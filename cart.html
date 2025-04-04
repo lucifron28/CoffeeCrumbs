@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <title>Coffee Crumb</title>
+    <title>Shopping Cart - Coffee Crumb</title>
 </head>
 <body>
     <header>
@@ -27,14 +27,18 @@
             </ul>
         </nav>
     </header>
-    <div class="hero">
-        <h1>Welcome to Coffee Crumb</h1>
-        <p>Your cozy haven for artisanal coffee and freshly baked pastries.</p>
-        <a href="menu.html" class="btn">Explore Our Menu</a>
-    </div>
+    <main>
+        <h2 class="menu-heading">Your Shopping Cart</h2>
+        <div id="shopping-cart" class="shopping-cart">
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: P0</p>
+            <button id="checkout-btn" class="btn">Checkout</button>
+        </div>
+    </main>
     <footer>
         <p>&copy; 2025 Coffee Crumb. All rights reserved.</p>
         <p>Images used on this website are for demonstration purposes only and are sourced from external platforms. All rights belong to their respective owners.</p>
     </footer>
+    <script src="assets/js/cart.js" defer></script>
 </body>
 </html>

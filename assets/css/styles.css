@@ -22,17 +22,6 @@ html, body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Header Styles */
-header {
-    background: #6f4c3e;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
 header h1 {
     margin: 0;
     font-size: 2.5em;
@@ -85,10 +74,11 @@ header h1 {
 
 /* Navigation Bar */
 nav {
-    background: #6f4c3e;
-    padding: 10px;
+    background: #4e342e; /* Dark coffee brown */
+    padding: 15px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+    border-bottom: 3px solid #d2b48c; /* Light beige border for contrast */
 }
 
 .nav-links {
@@ -97,7 +87,7 @@ nav {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px; /* Increased spacing between links */
     position: relative;
 }
 
@@ -110,13 +100,14 @@ nav {
     color: #fff;
     text-decoration: none;
     font-size: 1.2em;
-    padding: 5px 10px;
+    padding: 8px 15px; /* Increased padding for better clickability */
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s;
 }
 
 .nav-links a:hover {
-    background: #e68900;
+    background: #d2b48c; /* Light beige hover effect */
+    color: #4e342e; /* Dark coffee brown text on hover */
 }
 
 .dropdown {
@@ -126,8 +117,8 @@ nav {
 .dropdown-content {
     display: none;
     position: absolute;
-    background: #6f4c3e;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #4e342e; /* Match nav background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 10px;
     z-index: 1000;
@@ -140,13 +131,14 @@ nav {
     display: block;
     color: #fff;
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 8px 10px;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s;
 }
 
 .dropdown-content a:hover {
-    background: #e68900;
+    background: #d2b48c;
+    color: #4e342e;
 }
 
 .dropdown:hover .dropdown-content {
@@ -193,7 +185,15 @@ p {
 }
 
 #menu-container h3 {
+    font-family: 'Georgia', serif; /* Common font style for coffee shops */
+    font-size: 1.8em;
+    color: #4e342e; /* Coffee brown color */
     text-align: center;
+    margin-bottom: 15px;
+    text-transform: capitalize; /* Capitalize each word */
+    letter-spacing: 1px; /* Add slight spacing between letters */
+    border-bottom: 2px solid #d2b48c; /* Add a subtle underline */
+    padding-bottom: 5px; /* Add spacing below the text */
 }
 
 /* Menu Grid */
@@ -261,17 +261,18 @@ p {
 
 /* Footer Styles */
 footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #6f4c3e;
+    background: #4e342e; /* Dark coffee brown */
     color: #fff;
+    text-align: center;
+    padding: 15px 0;
     font-size: 0.9em;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: auto; /* Push the footer to the bottom of the page */
+    border-top: 3px solid #d2b48c; /* Light beige border for contrast */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
 }
 
 footer p {
     margin: 0;
+    font-family: 'Georgia', serif; /* Match font style with headings */
 }
 
 /* Responsive Design */
@@ -292,4 +293,105 @@ footer p {
     main {
         text-align: center; /* Center-align text for smaller screens */
     }
+}
+
+.menu-heading {
+    font-family: 'Georgia', serif; /* Common font style for coffee shops */
+    font-size: 2.5em;
+    color: #4e342e; /* Coffee brown color */
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Make the heading uppercase */
+    letter-spacing: 2px; /* Add spacing between letters */
+}
+
+.menu-container {
+    background-color: #f7f3e9; /* Light beige background for a cozy feel */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Cart Icon */
+.menu-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Space between heading and cart icon */
+    align-items: center; /* Vertically center items */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.menu-heading {
+    flex: 1; /* Allow the heading to take up available space */
+    text-align: center; /* Center the heading text */
+    margin: 0; /* Remove default margins */
+}
+
+.cart-icon {
+    margin-left: auto; /* Push the cart icon to the far right */
+    display: flex;
+    align-items: center; /* Vertically center the icon */
+    margin-right: 10px;
+}
+
+.cart-icon img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cart-icon img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Shopping Cart Page */
+.shopping-cart {
+    background-color: burlywood; /* Light beige background for a cozy feel */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.shopping-cart ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    max-height: 200px;
+    overflow-y: auto; /* Scrollable if items exceed height */
+}
+
+.shopping-cart ul li {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping-cart #cart-total {
+    font-weight: bold;
+    color: #4e342e;
+    margin-bottom: 10px;
+}
+
+.shopping-cart .btn {
+    background: #ff9800;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+    width: 100%;
+    text-align: center;
+}
+
+.shopping-cart .btn:hover {
+    background: #e68900;
 }
