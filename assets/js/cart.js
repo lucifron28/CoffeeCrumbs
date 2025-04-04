@@ -9,7 +9,11 @@ function updateCart() {
     cart.forEach(item => {
         const cartItem = document.createElement('li');
         cartItem.innerHTML = `
-            ${item.name} (x${item.quantity}) - P${(item.price * item.quantity).toFixed(2)}
+            <div class="item-details">
+                <img src="assets/images/${item.name.toLowerCase().replace(/\s+/g, '-')}.png" alt="${item.name}">
+                <span>${item.name} (x${item.quantity})</span>
+            </div>
+            <span>P${(item.price * item.quantity).toFixed(2)}</span>
             <button class="remove-btn" data-name="${item.name}">Remove</button>
         `;
         cartItemsContainer.appendChild(cartItem);
@@ -22,7 +26,13 @@ function updateCart() {
     document.querySelectorAll('.remove-btn').forEach(button => {
         button.addEventListener('click', (e) => {
             const name = e.target.getAttribute('data-name');
-            removeFromCart(name);
+            const cartItem = e.target.parentElement;
+
+            // Add animation class before removing
+            cartItem.classList.add('removing');
+            setTimeout(() => {
+                removeFromCart(name);
+            }, 300); // Wait for animation to complete
         });
     });
 }
@@ -36,7 +46,24 @@ function removeFromCart(name) {
     updateCart(); // Update cart display
 }
 
+function checkoutCart() {
+    if (cart.length === 0) {
+        alert("Your cart is empty. Add items to checkout.");
+        return;
+    }
+    cart = []; // Clear the cart
+    localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+    updateCart(); // Refresh the cart display
+    alert("Checkout successful! Thank you for your purchase."); // Notify the user
+}
+
 // Initialize cart on page load
 document.addEventListener('DOMContentLoaded', () => {
     updateCart();
+
+    // Add event listener to the checkout button
+    const checkoutButton = document.getElementById('checkout-btn');
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', checkoutCart);
+    }
 });

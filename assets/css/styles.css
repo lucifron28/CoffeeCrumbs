@@ -347,46 +347,122 @@ footer p {
 }
 
 /* Shopping Cart Page */
+.cart-main {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Full viewport height */
+    padding: 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
 .shopping-cart {
-    background-color: burlywood; /* Light beige background for a cozy feel */
-    padding: 20px;
+    background-color: #f7f3e9; /* Light beige background for a cozy feel */
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    max-width: 600px; /* Limit the width */
+    width: 100%; /* Ensure responsiveness */
+    text-align: center; /* Center the content */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    height: 100%; /* Full height to push content to the bottom */
+}
+
+#cart-items {
+    flex: 1; /* Allow the cart items to grow and take up available space */
+    overflow-y: auto; /* Scrollable if items exceed height */
+    margin-bottom: 20px; /* Add spacing below the cart items */
+}
+
+#cart-total, #checkout-btn {
+    margin-top: 10px; /* Add spacing above the total and button */
+}
+
+#checkout-btn {
+    margin-top: 20px; /* Add extra spacing above the button */
 }
 
 .shopping-cart ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 10px 0;
-    max-height: 200px;
+    margin: 0 0 20px 0;
+    max-height: 300px; /* Increase height for larger items */
     overflow-y: auto; /* Scrollable if items exceed height */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 15px; /* Add spacing between items */
 }
 
 .shopping-cart ul li {
-    font-size: 1em;
+    font-size: 1.2em; /* Make text larger */
     color: #333;
-    margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, opacity 0.3s; /* Add animation for removal */
+}
+
+.shopping-cart ul li img {
+    width: 40px; /* Icon size */
+    height: 40px;
+    margin-right: 10px; /* Space between icon and text */
+    border-radius: 50%; /* Make the icon circular */
+    object-fit: cover; /* Ensure the image fits properly */
+}
+
+.shopping-cart ul li .item-details {
+    display: flex;
+    align-items: center; /* Vertically align icon and text */
+    flex: 1; /* Allow details to take up available space */
+}
+
+.shopping-cart ul li .item-details span {
+    margin-left: px;
+}
+
+.shopping-cart ul li .remove-btn {
+    background: #e57373; /* Red background for remove button */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s, transform 0.3s;
+    margin-left: 10px; /* Space between text and button */
+}
+
+.shopping-cart ul li .remove-btn:hover {
+    background: #d32f2f; /* Darker red on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.shopping-cart ul li.removing {
+    transform: translateX(-100%); /* Slide out animation */
+    opacity: 0; /* Fade out */
 }
 
 .shopping-cart #cart-total {
     font-weight: bold;
     color: #4e342e;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5em; /* Make total larger */
 }
 
 .shopping-cart .btn {
     background: #ff9800;
     color: #fff;
-    padding: 10px 15px;
+    padding: 15px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.2em;
     transition: background 0.3s;
     width: 100%;
     text-align: center;
@@ -394,4 +470,20 @@ footer p {
 
 .shopping-cart .btn:hover {
     background: #e68900;
+}
+
+.remove-btn {
+    background: #e57373; /* Red background for remove button */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.remove-btn:hover {
+    background: #d32f2f; /* Darker red on hover */
+    transform: scale(1.1); /* Slight zoom effect */
 }

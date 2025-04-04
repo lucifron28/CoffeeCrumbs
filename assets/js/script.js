@@ -125,13 +125,15 @@ function displayMenu() {
 
 // Function to add items to the cart
 function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const existingItem = cart.find(item => item.name === name);
     if (existingItem) {
-        existingItem.quantity += 1;
+        existingItem.quantity += 1; // Increment quantity if item already exists
     } else {
-        cart.push({ name, price, quantity: 1 });
+        cart.push({ name, price, quantity: 1 }); // Add new item to the cart
     }
-    console.log(cart); // For debugging, replace with cart display logic
+    localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to localStorage
+    alert(`${name} has been added to your cart!`); // Notify the user
 }
 
 // Function to display market analysis
@@ -244,4 +246,11 @@ document.addEventListener('DOMContentLoaded', () => {
     displayManagementTeam();
     displayContactInformation();
     renderMenu();
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const name = e.target.getAttribute('data-name');
+            const price = parseFloat(e.target.getAttribute('data-price'));
+            addToCart(name, price); // Call addToCart when button is clicked
+        });
+    });
 });
