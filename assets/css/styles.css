@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     background-color: #f5f5f5;
     color: #333;
@@ -6,20 +5,20 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the body takes up the full viewport height */
+    min-height: 100vh;
     margin: 0;
 }
 
 html, body {
-    height: 100%; /* Ensure the body takes up the full height of the viewport */
+    height: 100%;
     margin: 0;
     padding: 0;
-    overflow-y: auto; /* Enable vertical scrolling */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 header h1 {
@@ -34,15 +33,15 @@ header h1 {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    text-align: center; /* Center text */
+    text-align: center;
     padding: 20px;
-    height: 100vh; /* Full viewport height */
-    background-color: #4e342e; /* Darker shade of brown as fallback */
+    height: 100vh;
+    background-color: #4e342e;
 }
 
 .hero h1 {
     color: #d2b48c;
-    font-size: 3em; /* Adjust font size */
+    font-size: 3em;
     margin-bottom: 15px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     margin-right: 14%;
@@ -50,7 +49,7 @@ header h1 {
 }
 
 .hero p {
-    font-size: 1.5em; /* Adjust font size */
+    font-size: 1.5em;
     margin-bottom: 25px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     margin-right: 12%;
@@ -72,13 +71,12 @@ header h1 {
     background: #e68900;
 }
 
-/* Navigation Bar */
 nav {
-    background: #4e342e; /* Dark coffee brown */
+    background: #4e342e;
     padding: 15px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
-    border-bottom: 3px solid #d2b48c; /* Light beige border for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #d2b48c;
 }
 
 .nav-links {
@@ -87,12 +85,12 @@ nav {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 20px; /* Increased spacing between links */
+    gap: 20px;
     position: relative;
 }
 
 .nav-links li {
-    display: inline;
+    display: inline-block;
     position: relative;
 }
 
@@ -100,14 +98,14 @@ nav {
     color: #fff;
     text-decoration: none;
     font-size: 1.2em;
-    padding: 8px 15px; /* Increased padding for better clickability */
+    padding: 8px 15px;
     border-radius: 5px;
     transition: background 0.3s, color 0.3s;
 }
 
 .nav-links a:hover {
-    background: #d2b48c; /* Light beige hover effect */
-    color: #4e342e; /* Dark coffee brown text on hover */
+    background: #d2b48c;
+    color: #4e342e;
 }
 
 .dropdown {
@@ -117,7 +115,7 @@ nav {
 .dropdown-content {
     display: none;
     position: absolute;
-    background: #4e342e; /* Match nav background */
+    background: #4e342e;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 10px;
@@ -145,9 +143,8 @@ nav {
     display: block;
 }
 
-/* Main Content */
 main {
-    flex: 1; /* Allow the main content to grow and push the footer to the bottom */
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -158,7 +155,7 @@ main {
 
 h1, h2, h3 {
     color: #6f4c3e;
-    text-align: right; /* Align headings to the right */
+    text-align: right;
 }
 
 h1 {
@@ -181,34 +178,33 @@ h3 {
 p {
     margin-bottom: 15px;
     font-size: 1.1em;
-    text-align: right; /* Align paragraphs to the right */
+    text-align: left;
 }
 
 #menu-container h3 {
-    font-family: 'Georgia', serif; /* Common font style for coffee shops */
+    font-family: 'Georgia', serif;
     font-size: 1.8em;
-    color: #4e342e; /* Coffee brown color */
+    color: #4e342e;
     text-align: center;
     margin-bottom: 15px;
-    text-transform: capitalize; /* Capitalize each word */
-    letter-spacing: 1px; /* Add slight spacing between letters */
-    border-bottom: 2px solid #d2b48c; /* Add a subtle underline */
-    padding-bottom: 5px; /* Add spacing below the text */
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #d2b48c;
+    padding-bottom: 5px;
 }
 
-/* Menu Grid */
 .menu-grid {
-    display: flex; /* Use flexbox for layout */
-    flex-wrap: wrap; /* Allow items to wrap to the next row */
-    gap: 20px; /* Add spacing between items */
-    justify-content: center; /* Center items horizontally */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
     margin-top: 20px;
     padding: 20px;
 }
 
 .menu-item {
-    flex: 1 1 calc(25% - 40px); /* Responsive width: 25% minus gap */
-    max-width: 300px; /* Limit the maximum width */
+    flex: 1 1 calc(25% - 40px);
+    max-width: 300px;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 15px;
@@ -224,11 +220,11 @@ p {
 }
 
 .menu-item img.menu-item-image {
-    width: 250px; /* Make the image responsive */
-    height: 200px; /* Fixed height for all images */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-    border-radius: 8px; /* Add rounded corners to the image */
-    margin-bottom: 10px; /* Add spacing below the image */
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .menu-item h3 {
@@ -259,80 +255,84 @@ p {
     background: #e68900;
 }
 
-/* Footer Styles */
 footer {
-    background: #4e342e; /* Dark coffee brown */
+    background: #4e342e;
     color: #fff;
     text-align: center;
     padding: 15px 0;
     font-size: 0.9em;
-    border-top: 3px solid #d2b48c; /* Light beige border for contrast */
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+    border-top: 3px solid #d2b48c;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
 
 footer p {
     margin: 0;
-    font-family: 'Georgia', serif; /* Match font style with headings */
+    font-family: 'Georgia', serif;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2.5em; /* Adjust font size for smaller screens */
+        font-size: 2.5em;
     }
 
     .hero p {
-        font-size: 1.2em; /* Adjust font size for smaller screens */
+        font-size: 1.2em;
     }
 
     .hero .btn {
-        font-size: 1em; /* Adjust button size for smaller screens */
-        padding: 8px 16px; /* Adjust padding for smaller screens */
+        font-size: 1em;
+        padding: 8px 16px;
     }
 
     main {
-        text-align: center; /* Center-align text for smaller screens */
+        text-align: center;
     }
 }
 
 .menu-heading {
-    font-family: 'Georgia', serif; /* Common font style for coffee shops */
+    font-family: 'Georgia', serif;
     font-size: 2.5em;
-    color: #4e342e; /* Coffee brown color */
+    color: #4e342e;
     text-align: center;
     margin-bottom: 20px;
-    text-transform: uppercase; /* Make the heading uppercase */
-    letter-spacing: 2px; /* Add spacing between letters */
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .menu-container {
-    background-color: #f7f3e9; /* Light beige background for a cozy feel */
+    background-color: #f7f3e9;
     padding: 20px;
-    border-radius: 10px; /* Rounded corners for the container */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Cart Icon */
 .menu-header {
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Space between heading and cart icon */
-    align-items: center; /* Vertically center items */
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
     position: relative;
 }
 
 .menu-heading {
-    flex: 1; /* Allow the heading to take up available space */
-    text-align: center; /* Center the heading text */
-    margin: 0; /* Remove default margins */
+    flex: 1;
+    text-align: center;
+    margin: 0;
 }
 
 .cart-icon {
-    margin-left: auto; /* Push the cart icon to the far right */
+    background-color: #d2b48c;
+    margin-left: auto;
     display: flex;
-    align-items: center; /* Vertically center the icon */
+    align-items: center;
     margin-right: 10px;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+    cursor: pointer;
+    border: 2px solid #4e342e;
 }
 
 .cart-icon img {
@@ -343,59 +343,58 @@ footer p {
 }
 
 .cart-icon img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    transform: scale(1.1);
 }
 
-/* Shopping Cart Page */
 .cart-main {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100%; /* Full viewport height */
-    padding: 20px; /* Add padding for spacing */
-    box-sizing: border-box; /* Include padding in height calculation */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .shopping-cart {
-    background-color: #f7f3e9; /* Light beige background for a cozy feel */
+    background-color: #f7f3e9;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    max-width: 600px; /* Limit the width */
-    width: 100%; /* Ensure responsiveness */
-    text-align: center; /* Center the content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    height: 100%; /* Full height to push content to the bottom */
+    flex-direction: column;
+    height: 100%;
 }
 
 #cart-items {
-    flex: 1; /* Allow the cart items to grow and take up available space */
-    overflow-y: auto; /* Scrollable if items exceed height */
-    margin-bottom: 20px; /* Add spacing below the cart items */
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
 }
 
 #cart-total, #checkout-btn {
-    margin-top: 10px; /* Add spacing above the total and button */
+    margin-top: 10px;
 }
 
 #checkout-btn {
-    margin-top: 20px; /* Add extra spacing above the button */
+    margin-top: 20px;
 }
 
 .shopping-cart ul {
     list-style: none;
     padding: 0;
     margin: 0 0 20px 0;
-    max-height: 300px; /* Increase height for larger items */
-    overflow-y: auto; /* Scrollable if items exceed height */
+    max-height: 300px;
+    overflow-y: auto;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 15px; /* Add spacing between items */
+    flex-direction: column;
+    gap: 15px;
 }
 
 .shopping-cart ul li {
-    font-size: 1.2em; /* Make text larger */
+    font-size: 1.2em;
     color: #333;
     display: flex;
     justify-content: space-between;
@@ -405,21 +404,21 @@ footer p {
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, opacity 0.3s; /* Add animation for removal */
+    transition: transform 0.3s, opacity 0.3s;
 }
 
 .shopping-cart ul li img {
-    width: 40px; /* Icon size */
+    width: 40px;
     height: 40px;
-    margin-right: 10px; /* Space between icon and text */
-    border-radius: 50%; /* Make the icon circular */
-    object-fit: cover; /* Ensure the image fits properly */
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .shopping-cart ul li .item-details {
     display: flex;
-    align-items: center; /* Vertically align icon and text */
-    flex: 1; /* Allow details to take up available space */
+    align-items: center;
+    flex: 1;
 }
 
 .shopping-cart ul li .item-details span {
@@ -427,7 +426,7 @@ footer p {
 }
 
 .shopping-cart ul li .remove-btn {
-    background: #e57373; /* Red background for remove button */
+    background: #e57373;
     color: #fff;
     border: none;
     padding: 8px 12px;
@@ -435,24 +434,24 @@ footer p {
     cursor: pointer;
     font-size: 0.9em;
     transition: background 0.3s, transform 0.3s;
-    margin-left: 10px; /* Space between text and button */
+    margin-left: 10px;
 }
 
 .shopping-cart ul li .remove-btn:hover {
-    background: #d32f2f; /* Darker red on hover */
-    transform: scale(1.1); /* Slight zoom effect */
+    background: #d32f2f;
+    transform: scale(1.1);
 }
 
 .shopping-cart ul li.removing {
-    transform: translateX(-100%); /* Slide out animation */
-    opacity: 0; /* Fade out */
+    transform: translateX(-100%);
+    opacity: 0;
 }
 
 .shopping-cart #cart-total {
     font-weight: bold;
     color: #4e342e;
     margin-bottom: 20px;
-    font-size: 1.5em; /* Make total larger */
+    font-size: 1.5em;
 }
 
 .shopping-cart .btn {
@@ -473,7 +472,7 @@ footer p {
 }
 
 .remove-btn {
-    background: #e57373; /* Red background for remove button */
+    background: #e57373;
     color: #fff;
     border: none;
     padding: 8px 12px;
@@ -484,13 +483,13 @@ footer p {
 }
 
 .remove-btn:hover {
-    background: #d32f2f; /* Darker red on hover */
-    transform: scale(1.1); /* Slight zoom effect */
+    background: #d32f2f;
+    transform: scale(1.1);
 }
 
 .page-heading {
     font-size: 2.5em;
-    color: #4e342e; /* Coffee brown color */
+    color: #4e342e;
     text-align: center;
     margin: 20px 0;
     text-transform: uppercase;
@@ -502,7 +501,7 @@ footer p {
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
-    background-color: #f7f3e9; /* Light beige background for a cozy feel */
+    background-color: #f7f3e9;
 }
 
 .about-container {
@@ -518,18 +517,27 @@ footer p {
     width: 100%;
     max-width: 500px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .about-content {
-    max-width: 600px;
-    text-align: left;
-    color: #6f4c3e; /* Coffee brown text color */
+    max-width: 800px;
+    text-align: center;
+    color: #6f4c3e;
     font-size: 1.2em;
     line-height: 1.8;
+    margin: 0 auto;
+    padding: 20px;
+    border-bottom: 1px solid #d2b48c;
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
-/* Responsive Design for About Us */
+.about-content:last-child {
+    border-bottom: none;
+}
+
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;
@@ -538,5 +546,32 @@ footer p {
 
     .about-content {
         text-align: center;
+        padding: 15px;
     }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+}
+
+.centered-heading {
+    text-align: center;
+    font-size: 2.5em;
+    color: #4e342e;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.more-page {
+    text-align: center;
 }

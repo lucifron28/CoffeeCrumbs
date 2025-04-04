@@ -83,10 +83,9 @@ const coffeeCrumbData = {
     }
 };
 
-console.log(coffeeCrumbData); // Check if data is loaded
-console.log(coffeeCrumbData.menuItems); // Check menu items
+console.log(coffeeCrumbData);
+console.log(coffeeCrumbData.menuItems);
 
-// Function to display business description
 function displayBusinessDescription() {
     const descriptionElement = document.getElementById('business-description');
     if (descriptionElement) {
@@ -96,7 +95,6 @@ function displayBusinessDescription() {
 
 let cart = [];
 
-// Function to display menu items with "Add to Cart" buttons
 function displayMenu() {
     const menuContainer = document.getElementById('menu-items');
     if (menuContainer) {
@@ -112,7 +110,6 @@ function displayMenu() {
             menuContainer.appendChild(menuItem);
         });
 
-        // Add event listeners to "Add to Cart" buttons
         document.querySelectorAll('.add-to-cart-btn').forEach(button => {
             button.addEventListener('click', (e) => {
                 const name = e.target.getAttribute('data-name');
@@ -123,20 +120,18 @@ function displayMenu() {
     }
 }
 
-// Function to add items to the cart
 function addToCart(name, price) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const existingItem = cart.find(item => item.name === name);
     if (existingItem) {
-        existingItem.quantity += 1; // Increment quantity if item already exists
+        existingItem.quantity += 1;
     } else {
-        cart.push({ name, price, quantity: 1 }); // Add new item to the cart
+        cart.push({ name, price, quantity: 1 });
     }
-    localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to localStorage
-    alert(`${name} has been added to your cart!`); // Notify the user
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} has been added to your cart!`);
 }
 
-// Function to display market analysis
 function displayMarketAnalysis() {
     const marketAnalysisElement = document.getElementById('market-analysis-content');
     if (marketAnalysisElement) {
@@ -145,7 +140,6 @@ function displayMarketAnalysis() {
     }
 }
 
-// Function to display marketing strategy
 function displayMarketingStrategy() {
     const marketingStrategyElement = document.getElementById('marketing-strategy-content');
     if (marketingStrategyElement) {
@@ -153,7 +147,6 @@ function displayMarketingStrategy() {
     }
 }
 
-// Function to display operations
 function displayOperations() {
     const operationsElement = document.getElementById('operations-content');
     if (operationsElement) {
@@ -162,7 +155,6 @@ function displayOperations() {
     }
 }
 
-// Function to display financial projections
 function displayFinancialProjections() {
     const financialProjectionsElement = document.getElementById('financial-projections-content');
     if (financialProjectionsElement) {
@@ -171,7 +163,6 @@ function displayFinancialProjections() {
     }
 }
 
-// Function to display management team
 function displayManagementTeam() {
     const managementTeamElement = document.getElementById('management-team-content');
     if (managementTeamElement) {
@@ -183,7 +174,6 @@ function displayManagementTeam() {
     }
 }
 
-// Function to display contact information
 function displayContactInformation() {
     const contactInfoElement = document.getElementById('contact-info');
     if (contactInfoElement) {
@@ -192,22 +182,20 @@ function displayContactInformation() {
     }
 }
 
-// Helper function to format category titles
 function formatCategoryTitle(category) {
     const conjunctions = ["and", "or", "of", "the", "in", "on", "with"];
     return category
-        .replace(/([A-Z])/g, ' $1') // Add space before capital letters
-        .split(' ') // Split into words
+        .replace(/([A-Z])/g, ' $1')
+        .split(' ')
         .map((word, index) => {
             if (index === 0 || !conjunctions.includes(word.toLowerCase())) {
-                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(); // Capitalize first letter
+                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
             }
-            return word.toLowerCase(); // Keep conjunctions lowercase
+            return word.toLowerCase();
         })
-        .join(' '); // Join words back into a string
+        .join(' ');
 }
 
-// Function to render menu
 function renderMenu() {
     const menuContainer = document.getElementById('menu-container');
     if (menuContainer) {
@@ -235,9 +223,8 @@ function renderMenu() {
     }
 }
 
-// Call functions when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    displayBusinessDescription(); // Example for other pages
+    displayBusinessDescription();
     displayMenu();
     displayMarketAnalysis();
     displayMarketingStrategy();
@@ -250,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', (e) => {
             const name = e.target.getAttribute('data-name');
             const price = parseFloat(e.target.getAttribute('data-price'));
-            addToCart(name, price); // Call addToCart when button is clicked
+            addToCart(name, price);
         });
     });
 });

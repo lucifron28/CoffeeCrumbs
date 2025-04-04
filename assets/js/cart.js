@@ -3,7 +3,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 function updateCart() {
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalElement = document.getElementById('cart-total');
-    cartItemsContainer.innerHTML = ''; // Clear existing items
+    cartItemsContainer.innerHTML = '';
     let total = 0;
 
     cart.forEach(item => {
@@ -22,17 +22,15 @@ function updateCart() {
 
     cartTotalElement.innerText = `Total: P${total.toFixed(2)}`;
 
-    // Add event listeners to remove buttons
     document.querySelectorAll('.remove-btn').forEach(button => {
         button.addEventListener('click', (e) => {
             const name = e.target.getAttribute('data-name');
             const cartItem = e.target.parentElement;
 
-            // Add animation class before removing
             cartItem.classList.add('removing');
             setTimeout(() => {
                 removeFromCart(name);
-            }, 300); // Wait for animation to complete
+            }, 300);
         });
     });
 }
@@ -40,10 +38,10 @@ function updateCart() {
 function removeFromCart(name) {
     const itemIndex = cart.findIndex(item => item.name === name);
     if (itemIndex > -1) {
-        cart.splice(itemIndex, 1); // Remove item from cart
+        cart.splice(itemIndex, 1);
     }
-    localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
-    updateCart(); // Update cart display
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCart();
 }
 
 function checkoutCart() {
@@ -51,17 +49,15 @@ function checkoutCart() {
         alert("Your cart is empty. Add items to checkout.");
         return;
     }
-    cart = []; // Clear the cart
-    localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
-    updateCart(); // Refresh the cart display
-    alert("Checkout successful! Thank you for your purchase."); // Notify the user
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCart();
+    alert("Checkout successful! Thank you for your purchase.");
 }
 
-// Initialize cart on page load
 document.addEventListener('DOMContentLoaded', () => {
     updateCart();
 
-    // Add event listener to the checkout button
     const checkoutButton = document.getElementById('checkout-btn');
     if (checkoutButton) {
         checkoutButton.addEventListener('click', checkoutCart);
